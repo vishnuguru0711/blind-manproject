@@ -1,0 +1,63 @@
+The error `ModuleNotFoundError: No module named 'object_detection'` indicates that the `object_detection` module from the **TensorFlow Object Detection API** is not available in your environment. To fix this issue, you need to set up the **TensorFlow Object Detection API** correctly.
+
+### Steps to Resolve the Issue:
+
+#### 1. **Clone the TensorFlow Models Repository**
+First, you need to clone the **TensorFlow models** repository, which contains the `object_detection` module.
+
+```bash
+git clone https://github.com/tensorflow/models.git
+```
+
+#### 2. **Install Dependencies**
+After cloning the repository, you need to install the required dependencies for the Object Detection API.
+
+1. Navigate to the `models/research/` directory:
+   ```bash
+   cd models/research/
+   ```
+
+2. **Install the dependencies**:
+   You may need to install the following packages to set up the TensorFlow Object Detection API:
+   ```bash
+   pip install tensorflow
+   pip install matplotlib
+   pip install pillow
+   pip install lxml
+   pip install jupyter
+   pip install pandas
+   pip install opencv-python
+   pip install cython
+   pip install contextlib2
+   pip install tf-slim
+   pip install py-cpuinfo
+   ```
+
+3. **Install the Object Detection API**:
+   Now, you can install the Object Detection API by running the following command in the `models/research/` directory:
+   ```bash
+   pip install .
+   ```
+
+   This command will install the package from the current directory (`.`), which is the root directory of the cloned TensorFlow models repository.
+
+#### 3. **Check if the Installation is Successful**
+To check if the installation was successful, try running the following test script from the `models/research/` directory:
+
+```bash
+python object_detection/builders/model_builder_test.py
+```
+
+If everything is set up correctly, this test should pass without any errors.
+
+#### 4. **Use the Object Detection API in Your Script**
+Once you've installed the Object Detection API, you should be able to import the `label_map_util` and `object_detection` modules in your script without encountering the `ModuleNotFoundError`.
+
+```python
+from object_detection.utils import label_map_util
+```
+
+### Alternative: If You Don’t Want to Clone the Entire Repository
+If you don’t want to clone the whole TensorFlow models repository, you can install the TensorFlow Object Detection API directly by following the steps here: [TensorFlow Object Detection API Installation](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html).
+
+Let me know if you need further assistance!
